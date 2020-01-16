@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 引入配置文件 -->
+    <properties resource="application.properties"/>
+    <!-- 一个数据库一个context -->
+    <!--
+     defaultModelType:指定生成对象的样式
+     flat：所有内容（主键，blob）等全部生成在一个对象中
+     targetRuntime:
+     MyBatis3Simple：类似MyBatis3，只是不生成XXXBySample
+     -->
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!--
+        delimitIdentifiers：参考tableName的解释，
+        注意，默认的delimitIdentifiers是双引号，
+        如果类似MYSQL这样的数据库，使用的是`（反引号，
+        那么还需要设置context的beginningDelimiter和endingDelimiter属性）
+        -->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <!-- 注释 -->
+        <commentGenerator>
+            <!--是否取消注释-->
+            <property name="suppressAllComments" value="true"/>
+            <!--是否生成注释代时间戳-->
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <!-- jdbc连接 -->
+        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+                        connectionURL="${spring.datasource.url}"
+                        userId="${spring.datasource.username}"
+                        password="${spring.datasource.password}">
+        </jdbcConnection>
+        <!--类型转换-->
+        <javaTypeResolver>
+            <!--是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc）-->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成实体类地址-->
+        <javaModelGenerator targetPackage="com.auto.auto_manage.bean" targetProject="src/main/java">
+            <!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 是否针对string类型的字段在set的时候进行trim调用 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成mapper.xml文件 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        <!-- 生成mapper.xml对应mapper.java，也就是接口dao -->
+        <javaClientGenerator targetPackage="com.auto.auto_manage.mapper" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <table tableName="test"
+               domainObjectName="Test"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="false"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               selectByPrimaryKeyQueryId="false"
+               selectByExampleQueryId="true">
+        </table>
+    </context>
+</generatorConfiguration>

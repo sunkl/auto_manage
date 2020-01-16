@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.auto.auto_manage.mapper.TestMapper">
+  <resultMap id="BaseResultMap" type="com.auto.auto_manage.bean.Test">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="colCode" jdbcType="VARCHAR" property="colcode" />
+    <result column="sqlStr" jdbcType="VARCHAR" property="sqlstr" />
+    <result column="colName" jdbcType="VARCHAR" property="colname" />
+    <result column="count_" jdbcType="DOUBLE" property="count" />
+    <result column="distinctCount" jdbcType="DOUBLE" property="distinctcount" />
+    <result column="discretization_count_dis" jdbcType="DOUBLE" property="discretizationCountDis" />
+    <result column="gain" jdbcType="DOUBLE" property="gain" />
+    <result column="gainRate" jdbcType="DOUBLE" property="gainrate" />
+    <result column="gini" jdbcType="DOUBLE" property="gini" />
+    <result column="chi_square" jdbcType="DOUBLE" property="chiSquare" />
+    <result column="nullRate" jdbcType="DOUBLE" property="nullrate" />
+    <result column="isDrop" jdbcType="VARCHAR" property="isdrop" />
+    <result column="dataType" jdbcType="VARCHAR" property="datatype" />
+    <result column="infer_data_type" jdbcType="VARCHAR" property="inferDataType" />
+    <result column="dorpStatus" jdbcType="VARCHAR" property="dorpstatus" />
+    <result column="resultTableName" jdbcType="VARCHAR" property="resulttablename" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="createTime" jdbcType="VARCHAR" property="createtime" />
+    <result column="updateTime" jdbcType="VARCHAR" property="updatetime" />
+    <result column="discretization_msg" jdbcType="VARCHAR" property="discretizationMsg" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from test
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.auto.auto_manage.bean.Test">
+    insert into test (id, colCode, sqlStr, 
+      colName, count_, distinctCount, 
+      discretization_count_dis, gain, gainRate, 
+      gini, chi_square, nullRate, 
+      isDrop, dataType, infer_data_type, 
+      dorpStatus, resultTableName, version, 
+      createTime, updateTime, discretization_msg
+      )
+    values (#{id,jdbcType=INTEGER}, #{colcode,jdbcType=VARCHAR}, #{sqlstr,jdbcType=VARCHAR}, 
+      #{colname,jdbcType=VARCHAR}, #{count,jdbcType=DOUBLE}, #{distinctcount,jdbcType=DOUBLE}, 
+      #{discretizationCountDis,jdbcType=DOUBLE}, #{gain,jdbcType=DOUBLE}, #{gainrate,jdbcType=DOUBLE}, 
+      #{gini,jdbcType=DOUBLE}, #{chiSquare,jdbcType=DOUBLE}, #{nullrate,jdbcType=DOUBLE}, 
+      #{isdrop,jdbcType=VARCHAR}, #{datatype,jdbcType=VARCHAR}, #{inferDataType,jdbcType=VARCHAR}, 
+      #{dorpstatus,jdbcType=VARCHAR}, #{resulttablename,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=VARCHAR}, #{updatetime,jdbcType=VARCHAR}, #{discretizationMsg,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.auto.auto_manage.bean.Test">
+    update test
+    set colCode = #{colcode,jdbcType=VARCHAR},
+      sqlStr = #{sqlstr,jdbcType=VARCHAR},
+      colName = #{colname,jdbcType=VARCHAR},
+      count_ = #{count,jdbcType=DOUBLE},
+      distinctCount = #{distinctcount,jdbcType=DOUBLE},
+      discretization_count_dis = #{discretizationCountDis,jdbcType=DOUBLE},
+      gain = #{gain,jdbcType=DOUBLE},
+      gainRate = #{gainrate,jdbcType=DOUBLE},
+      gini = #{gini,jdbcType=DOUBLE},
+      chi_square = #{chiSquare,jdbcType=DOUBLE},
+      nullRate = #{nullrate,jdbcType=DOUBLE},
+      isDrop = #{isdrop,jdbcType=VARCHAR},
+      dataType = #{datatype,jdbcType=VARCHAR},
+      infer_data_type = #{inferDataType,jdbcType=VARCHAR},
+      dorpStatus = #{dorpstatus,jdbcType=VARCHAR},
+      resultTableName = #{resulttablename,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=VARCHAR},
+      discretization_msg = #{discretizationMsg,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 'false' as QUERYID,id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+  </select>
+  <resultMap id="BaseResultMap" type="com.auto.auto_manage.bean.Test">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="colCode" jdbcType="VARCHAR" property="colcode" />
+    <result column="sqlStr" jdbcType="VARCHAR" property="sqlstr" />
+    <result column="colName" jdbcType="VARCHAR" property="colname" />
+    <result column="count_" jdbcType="DOUBLE" property="count" />
+    <result column="distinctCount" jdbcType="DOUBLE" property="distinctcount" />
+    <result column="discretization_count_dis" jdbcType="DOUBLE" property="discretizationCountDis" />
+    <result column="gain" jdbcType="DOUBLE" property="gain" />
+    <result column="gainRate" jdbcType="DOUBLE" property="gainrate" />
+    <result column="gini" jdbcType="DOUBLE" property="gini" />
+    <result column="chi_square" jdbcType="DOUBLE" property="chiSquare" />
+    <result column="nullRate" jdbcType="DOUBLE" property="nullrate" />
+    <result column="isDrop" jdbcType="VARCHAR" property="isdrop" />
+    <result column="dataType" jdbcType="VARCHAR" property="datatype" />
+    <result column="infer_data_type" jdbcType="VARCHAR" property="inferDataType" />
+    <result column="dorpStatus" jdbcType="VARCHAR" property="dorpstatus" />
+    <result column="resultTableName" jdbcType="VARCHAR" property="resulttablename" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="createTime" jdbcType="VARCHAR" property="createtime" />
+    <result column="updateTime" jdbcType="VARCHAR" property="updatetime" />
+    <result column="discretization_msg" jdbcType="VARCHAR" property="discretizationMsg" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from test
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.auto.auto_manage.bean.Test">
+    insert into test (id, colCode, sqlStr, 
+      colName, count_, distinctCount, 
+      discretization_count_dis, gain, gainRate, 
+      gini, chi_square, nullRate, 
+      isDrop, dataType, infer_data_type, 
+      dorpStatus, resultTableName, version, 
+      createTime, updateTime, discretization_msg
+      )
+    values (#{id,jdbcType=INTEGER}, #{colcode,jdbcType=VARCHAR}, #{sqlstr,jdbcType=VARCHAR}, 
+      #{colname,jdbcType=VARCHAR}, #{count,jdbcType=DOUBLE}, #{distinctcount,jdbcType=DOUBLE}, 
+      #{discretizationCountDis,jdbcType=DOUBLE}, #{gain,jdbcType=DOUBLE}, #{gainrate,jdbcType=DOUBLE}, 
+      #{gini,jdbcType=DOUBLE}, #{chiSquare,jdbcType=DOUBLE}, #{nullrate,jdbcType=DOUBLE}, 
+      #{isdrop,jdbcType=VARCHAR}, #{datatype,jdbcType=VARCHAR}, #{inferDataType,jdbcType=VARCHAR}, 
+      #{dorpstatus,jdbcType=VARCHAR}, #{resulttablename,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=VARCHAR}, #{updatetime,jdbcType=VARCHAR}, #{discretizationMsg,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.auto.auto_manage.bean.Test">
+    update test
+    set colCode = #{colcode,jdbcType=VARCHAR},
+      sqlStr = #{sqlstr,jdbcType=VARCHAR},
+      colName = #{colname,jdbcType=VARCHAR},
+      count_ = #{count,jdbcType=DOUBLE},
+      distinctCount = #{distinctcount,jdbcType=DOUBLE},
+      discretization_count_dis = #{discretizationCountDis,jdbcType=DOUBLE},
+      gain = #{gain,jdbcType=DOUBLE},
+      gainRate = #{gainrate,jdbcType=DOUBLE},
+      gini = #{gini,jdbcType=DOUBLE},
+      chi_square = #{chiSquare,jdbcType=DOUBLE},
+      nullRate = #{nullrate,jdbcType=DOUBLE},
+      isDrop = #{isdrop,jdbcType=VARCHAR},
+      dataType = #{datatype,jdbcType=VARCHAR},
+      infer_data_type = #{inferDataType,jdbcType=VARCHAR},
+      dorpStatus = #{dorpstatus,jdbcType=VARCHAR},
+      resultTableName = #{resulttablename,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=VARCHAR},
+      discretization_msg = #{discretizationMsg,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 'false' as QUERYID,id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+  </select>
+  <resultMap id="BaseResultMap" type="com.auto.auto_manage.bean.Test">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="colCode" jdbcType="VARCHAR" property="colcode" />
+    <result column="sqlStr" jdbcType="VARCHAR" property="sqlstr" />
+    <result column="colName" jdbcType="VARCHAR" property="colname" />
+    <result column="count_" jdbcType="DOUBLE" property="count" />
+    <result column="distinctCount" jdbcType="DOUBLE" property="distinctcount" />
+    <result column="discretization_count_dis" jdbcType="DOUBLE" property="discretizationCountDis" />
+    <result column="gain" jdbcType="DOUBLE" property="gain" />
+    <result column="gainRate" jdbcType="DOUBLE" property="gainrate" />
+    <result column="gini" jdbcType="DOUBLE" property="gini" />
+    <result column="chi_square" jdbcType="DOUBLE" property="chiSquare" />
+    <result column="nullRate" jdbcType="DOUBLE" property="nullrate" />
+    <result column="isDrop" jdbcType="VARCHAR" property="isdrop" />
+    <result column="dataType" jdbcType="VARCHAR" property="datatype" />
+    <result column="infer_data_type" jdbcType="VARCHAR" property="inferDataType" />
+    <result column="dorpStatus" jdbcType="VARCHAR" property="dorpstatus" />
+    <result column="resultTableName" jdbcType="VARCHAR" property="resulttablename" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="createTime" jdbcType="VARCHAR" property="createtime" />
+    <result column="updateTime" jdbcType="VARCHAR" property="updatetime" />
+    <result column="discretization_msg" jdbcType="VARCHAR" property="discretizationMsg" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from test
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.auto.auto_manage.bean.Test">
+    insert into test (id, colCode, sqlStr, 
+      colName, count_, distinctCount, 
+      discretization_count_dis, gain, gainRate, 
+      gini, chi_square, nullRate, 
+      isDrop, dataType, infer_data_type, 
+      dorpStatus, resultTableName, version, 
+      createTime, updateTime, discretization_msg
+      )
+    values (#{id,jdbcType=INTEGER}, #{colcode,jdbcType=VARCHAR}, #{sqlstr,jdbcType=VARCHAR}, 
+      #{colname,jdbcType=VARCHAR}, #{count,jdbcType=DOUBLE}, #{distinctcount,jdbcType=DOUBLE}, 
+      #{discretizationCountDis,jdbcType=DOUBLE}, #{gain,jdbcType=DOUBLE}, #{gainrate,jdbcType=DOUBLE}, 
+      #{gini,jdbcType=DOUBLE}, #{chiSquare,jdbcType=DOUBLE}, #{nullrate,jdbcType=DOUBLE}, 
+      #{isdrop,jdbcType=VARCHAR}, #{datatype,jdbcType=VARCHAR}, #{inferDataType,jdbcType=VARCHAR}, 
+      #{dorpstatus,jdbcType=VARCHAR}, #{resulttablename,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=VARCHAR}, #{updatetime,jdbcType=VARCHAR}, #{discretizationMsg,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.auto.auto_manage.bean.Test">
+    update test
+    set colCode = #{colcode,jdbcType=VARCHAR},
+      sqlStr = #{sqlstr,jdbcType=VARCHAR},
+      colName = #{colname,jdbcType=VARCHAR},
+      count_ = #{count,jdbcType=DOUBLE},
+      distinctCount = #{distinctcount,jdbcType=DOUBLE},
+      discretization_count_dis = #{discretizationCountDis,jdbcType=DOUBLE},
+      gain = #{gain,jdbcType=DOUBLE},
+      gainRate = #{gainrate,jdbcType=DOUBLE},
+      gini = #{gini,jdbcType=DOUBLE},
+      chi_square = #{chiSquare,jdbcType=DOUBLE},
+      nullRate = #{nullrate,jdbcType=DOUBLE},
+      isDrop = #{isdrop,jdbcType=VARCHAR},
+      dataType = #{datatype,jdbcType=VARCHAR},
+      infer_data_type = #{inferDataType,jdbcType=VARCHAR},
+      dorpStatus = #{dorpstatus,jdbcType=VARCHAR},
+      resultTableName = #{resulttablename,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=VARCHAR},
+      discretization_msg = #{discretizationMsg,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 'false' as QUERYID,id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+  </select>
+  <resultMap id="BaseResultMap" type="com.auto.auto_manage.bean.Test">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="colCode" jdbcType="VARCHAR" property="colcode" />
+    <result column="sqlStr" jdbcType="VARCHAR" property="sqlstr" />
+    <result column="colName" jdbcType="VARCHAR" property="colname" />
+    <result column="count_" jdbcType="DOUBLE" property="count" />
+    <result column="distinctCount" jdbcType="DOUBLE" property="distinctcount" />
+    <result column="discretization_count_dis" jdbcType="DOUBLE" property="discretizationCountDis" />
+    <result column="gain" jdbcType="DOUBLE" property="gain" />
+    <result column="gainRate" jdbcType="DOUBLE" property="gainrate" />
+    <result column="gini" jdbcType="DOUBLE" property="gini" />
+    <result column="chi_square" jdbcType="DOUBLE" property="chiSquare" />
+    <result column="nullRate" jdbcType="DOUBLE" property="nullrate" />
+    <result column="isDrop" jdbcType="VARCHAR" property="isdrop" />
+    <result column="dataType" jdbcType="VARCHAR" property="datatype" />
+    <result column="infer_data_type" jdbcType="VARCHAR" property="inferDataType" />
+    <result column="dorpStatus" jdbcType="VARCHAR" property="dorpstatus" />
+    <result column="resultTableName" jdbcType="VARCHAR" property="resulttablename" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="createTime" jdbcType="VARCHAR" property="createtime" />
+    <result column="updateTime" jdbcType="VARCHAR" property="updatetime" />
+    <result column="discretization_msg" jdbcType="VARCHAR" property="discretizationMsg" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from test
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.auto.auto_manage.bean.Test">
+    insert into test (id, colCode, sqlStr, 
+      colName, count_, distinctCount, 
+      discretization_count_dis, gain, gainRate, 
+      gini, chi_square, nullRate, 
+      isDrop, dataType, infer_data_type, 
+      dorpStatus, resultTableName, version, 
+      createTime, updateTime, discretization_msg
+      )
+    values (#{id,jdbcType=INTEGER}, #{colcode,jdbcType=VARCHAR}, #{sqlstr,jdbcType=VARCHAR}, 
+      #{colname,jdbcType=VARCHAR}, #{count,jdbcType=DOUBLE}, #{distinctcount,jdbcType=DOUBLE}, 
+      #{discretizationCountDis,jdbcType=DOUBLE}, #{gain,jdbcType=DOUBLE}, #{gainrate,jdbcType=DOUBLE}, 
+      #{gini,jdbcType=DOUBLE}, #{chiSquare,jdbcType=DOUBLE}, #{nullrate,jdbcType=DOUBLE}, 
+      #{isdrop,jdbcType=VARCHAR}, #{datatype,jdbcType=VARCHAR}, #{inferDataType,jdbcType=VARCHAR}, 
+      #{dorpstatus,jdbcType=VARCHAR}, #{resulttablename,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=VARCHAR}, #{updatetime,jdbcType=VARCHAR}, #{discretizationMsg,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.auto.auto_manage.bean.Test">
+    update test
+    set colCode = #{colcode,jdbcType=VARCHAR},
+      sqlStr = #{sqlstr,jdbcType=VARCHAR},
+      colName = #{colname,jdbcType=VARCHAR},
+      count_ = #{count,jdbcType=DOUBLE},
+      distinctCount = #{distinctcount,jdbcType=DOUBLE},
+      discretization_count_dis = #{discretizationCountDis,jdbcType=DOUBLE},
+      gain = #{gain,jdbcType=DOUBLE},
+      gainRate = #{gainrate,jdbcType=DOUBLE},
+      gini = #{gini,jdbcType=DOUBLE},
+      chi_square = #{chiSquare,jdbcType=DOUBLE},
+      nullRate = #{nullrate,jdbcType=DOUBLE},
+      isDrop = #{isdrop,jdbcType=VARCHAR},
+      dataType = #{datatype,jdbcType=VARCHAR},
+      infer_data_type = #{inferDataType,jdbcType=VARCHAR},
+      dorpStatus = #{dorpstatus,jdbcType=VARCHAR},
+      resultTableName = #{resulttablename,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=VARCHAR},
+      discretization_msg = #{discretizationMsg,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 'false' as QUERYID,id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+  </select>
+  <resultMap id="BaseResultMap" type="cn.huangwei.bean.Test">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="colCode" jdbcType="VARCHAR" property="colcode" />
+    <result column="sqlStr" jdbcType="VARCHAR" property="sqlstr" />
+    <result column="colName" jdbcType="VARCHAR" property="colname" />
+    <result column="count_" jdbcType="DOUBLE" property="count" />
+    <result column="distinctCount" jdbcType="DOUBLE" property="distinctcount" />
+    <result column="discretization_count_dis" jdbcType="DOUBLE" property="discretizationCountDis" />
+    <result column="gain" jdbcType="DOUBLE" property="gain" />
+    <result column="gainRate" jdbcType="DOUBLE" property="gainrate" />
+    <result column="gini" jdbcType="DOUBLE" property="gini" />
+    <result column="chi_square" jdbcType="DOUBLE" property="chiSquare" />
+    <result column="nullRate" jdbcType="DOUBLE" property="nullrate" />
+    <result column="isDrop" jdbcType="VARCHAR" property="isdrop" />
+    <result column="dataType" jdbcType="VARCHAR" property="datatype" />
+    <result column="infer_data_type" jdbcType="VARCHAR" property="inferDataType" />
+    <result column="dorpStatus" jdbcType="VARCHAR" property="dorpstatus" />
+    <result column="resultTableName" jdbcType="VARCHAR" property="resulttablename" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="createTime" jdbcType="VARCHAR" property="createtime" />
+    <result column="updateTime" jdbcType="VARCHAR" property="updatetime" />
+    <result column="discretization_msg" jdbcType="VARCHAR" property="discretizationMsg" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from test
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.huangwei.bean.Test">
+    insert into test (id, colCode, sqlStr, 
+      colName, count_, distinctCount, 
+      discretization_count_dis, gain, gainRate, 
+      gini, chi_square, nullRate, 
+      isDrop, dataType, infer_data_type, 
+      dorpStatus, resultTableName, version, 
+      createTime, updateTime, discretization_msg
+      )
+    values (#{id,jdbcType=INTEGER}, #{colcode,jdbcType=VARCHAR}, #{sqlstr,jdbcType=VARCHAR}, 
+      #{colname,jdbcType=VARCHAR}, #{count,jdbcType=DOUBLE}, #{distinctcount,jdbcType=DOUBLE}, 
+      #{discretizationCountDis,jdbcType=DOUBLE}, #{gain,jdbcType=DOUBLE}, #{gainrate,jdbcType=DOUBLE}, 
+      #{gini,jdbcType=DOUBLE}, #{chiSquare,jdbcType=DOUBLE}, #{nullrate,jdbcType=DOUBLE}, 
+      #{isdrop,jdbcType=VARCHAR}, #{datatype,jdbcType=VARCHAR}, #{inferDataType,jdbcType=VARCHAR}, 
+      #{dorpstatus,jdbcType=VARCHAR}, #{resulttablename,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=VARCHAR}, #{updatetime,jdbcType=VARCHAR}, #{discretizationMsg,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.huangwei.bean.Test">
+    update test
+    set colCode = #{colcode,jdbcType=VARCHAR},
+      sqlStr = #{sqlstr,jdbcType=VARCHAR},
+      colName = #{colname,jdbcType=VARCHAR},
+      count_ = #{count,jdbcType=DOUBLE},
+      distinctCount = #{distinctcount,jdbcType=DOUBLE},
+      discretization_count_dis = #{discretizationCountDis,jdbcType=DOUBLE},
+      gain = #{gain,jdbcType=DOUBLE},
+      gainRate = #{gainrate,jdbcType=DOUBLE},
+      gini = #{gini,jdbcType=DOUBLE},
+      chi_square = #{chiSquare,jdbcType=DOUBLE},
+      nullRate = #{nullrate,jdbcType=DOUBLE},
+      isDrop = #{isdrop,jdbcType=VARCHAR},
+      dataType = #{datatype,jdbcType=VARCHAR},
+      infer_data_type = #{inferDataType,jdbcType=VARCHAR},
+      dorpStatus = #{dorpstatus,jdbcType=VARCHAR},
+      resultTableName = #{resulttablename,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=VARCHAR},
+      discretization_msg = #{discretizationMsg,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 'false' as QUERYID,id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, colCode, sqlStr, colName, count_, distinctCount, discretization_count_dis, 
+    gain, gainRate, gini, chi_square, nullRate, isDrop, dataType, infer_data_type, dorpStatus, 
+    resultTableName, version, createTime, updateTime, discretization_msg
+    from test
+  </select>
+</mapper>
